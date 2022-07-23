@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Email занят!{% endblock %}
+
+{% block headcontent %}
+{% endblock %}
+
+{% block bodycontent %}
+<p>Пользователь с таким емейлом уже есть!</p>
+<form action="{% url 'pages:reg_page' %}" method="get">
+    <button type="submit">Повторить</button>
+</form>
+<form action="{% url 'pages:main_page' %}" method="get">
+    <button type="submit">На главную</button>
+</form>
+{% endblock %}

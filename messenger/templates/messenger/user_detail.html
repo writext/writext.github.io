@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Добро пожаловать на Writext!{% endblock %}
+
+{% block headcontent %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
+{% block bodycontent %}
+<h1>{{user.first_name}}</h1>
+<h2>Посты пользователя</h2>
+{% for post in posts %}
+<h3>{{post.post_title}}</h3>
+<em>{{post.post_category}}</em>
+<h4>{{post.post_text}}</h4>
+<strong><em>{{post.pub_date}}</em></strong>
+{% endfor %}
+
+<h2>Вопросы пользователя</h2>
+{% for question in questions %}
+<h3>{{question.question_title}}</h3>
+<em>{{question.question_category}}</em>
+<h4>{{question.question_text}}</h4>
+<strong><em>{{question.pub_date}}</em></strong>
+{% endfor %}
+{% endblock %}

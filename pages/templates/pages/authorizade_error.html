@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Writext &#151; Создать пост{% endblock %}
+
+{% block headcontent %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+{% endblock %}
+
+{% block bodycontent %}
+<h1>Вы не авторизированны!!!</h1>
+{% endblock %}

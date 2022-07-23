@@ -1,0 +1,12 @@
+#top_href {
+  position: fixed;
+  bottom: 10%;
+  right: 10px;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 400px){
+  #top_href {
+    width: 25%;
+  }
+}

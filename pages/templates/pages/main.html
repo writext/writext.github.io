@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Добро пожаловать на Writext!{% endblock %}
+
+{% block headcontent %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link rel='icon' href="{% static 'imgs/writextbiginverted.png' %}" type='image/png'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block bodycontent %}
+    <header class="header">
+      <div class="logo">
+        <a href="index.php" class="header-logo-link">
+          <img src="{% static 'imgs/writextbiginverted.png' %}" alt="logo" class="logo-png" width="30%" height="70%">
+        </a>
+      </div>
+        <nav class="header-nav">
+          <ul class="header-list">
+            <li class="header-item">
+                <a href="{% url 'posts:show_post' %}" class="header-item-link">Лента</a>
+            </li>
+            <li class="header-item">
+                <a href="{% url 'posts:show_post' %}" class="header-item-link">Видеолента</a>
+            </li>
+            <li class="header-item">
+                <a href="{% url 'forums:show_forums' %}" class="header-item-link">Форум</a>
+            </li>
+            <li class="header-item">
+                <a href="{% url 'messenger:show_users' %}" class="header-item-link">Пользователи</a>
+            </li>
+            <li class="header-item">
+                <a href="{% url 'pages:cloud_page' %}" class="header-item-link">Облако</a>
+            </li>
+            {% if not request.user.is_authenticated %}
+              <li class="header-item">
+                  <a href="{% url 'user:reg_page' %}" class="header-item-link">Зарегистрироваться</a>
+              </li>
+              <li class="header-item">
+                  <a href="accounts/login/" class="header-item-link">Войти</a>
+              </li>
+            {% else %}
+              <li class="header-item">
+                  <a href="accounts/profile/" class="header-item-link">{{request.user.first_name}}</a>
+              </li>
+              <li class="header-item">
+                  <a href="accounts/logout/" class="header-item-link">Выйти</a>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+    </header>
+    <div>
+      <gilroynotverybig>
+        <img class="ugolki2" src="{% static 'imgs/illu1.png' %}" width="50%" height="50%" align="center"/>
+          <p align="left">Привествуем вас на Writext &#151; уютном уголке интернета!</p>
+      </gilroynotverybig>
+    </div>
+{% endblock %}

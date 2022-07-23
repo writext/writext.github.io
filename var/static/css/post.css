@@ -1,0 +1,39 @@
+.head-1 {
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  color: #953280;
+  font-family: Rubik;
+}
+
+.basic {
+  text-indent: 10px;
+  font-family: Rubik;
+  font-size: 24px;
+}
+
+.i {
+  font-style: italic;
+}
+
+form {
+  font-size: 20px;
+  font-family: Rubik;
+  position: absolute;
+  left: 40%;
+}
+
+err {
+  color: red;
+  text-weight: bold;
+  display: block;
+  font-size: 20px;
+}
+
+good {
+  color: green;
+  display: block;
+  text-weight: bold;
+  font-size: 20px;
+}

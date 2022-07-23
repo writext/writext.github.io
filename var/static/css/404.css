@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Gilroy-Semibold;
+    src: url(../fonts/Gilroy-Semibold.ttf);
+}
+
+h1 {
+    font-family: Gilroy-Semibold, 'Tahoma';
+    font-size: 24px;
+    } /*Добавил шрифт Gilroy Semibold*/
+gilroybig {
+    font-family: Gilroy-Semibold, 'Tahoma';
+    font-size: 32px;
+    } /*То же, но больше размер*/
+gilroynotverybig {
+    font-family: Gilroy-Semibold, 'Tahoma';
+     font-size: 36px;
+    } /*Ещё больше размер*/
+gilroyverybig {
+    font-family: Gilroy-Semibold, 'Tahoma';
+    font-size: 44px;
+    } /*Намного больше размер*/

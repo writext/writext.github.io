@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Форум{% endblock %}
+
+{% block headcontent %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link rel='icon' href="{% static 'imgs/writextbiginverted.png' %}" type='image/png'>
+{% endblock %}
+
+{% block bodycontent %}
+
+<a href="{% url 'forums:create_question_page' %}">Задать вопрос</a>
+
+{% for i in forums %}
+    {% if request.user.username == i.author %}
+        <h3><a href="{% url 'forums:del_question' i.id %}">Удалить вопрос</a></h3>
+    {% endif %}
+    <a href="{% url 'forums:show_detail' i.id %}">
+        <h2 style="color:white;">{{i.question_title}}</h2>
+        <strong style="color:white;">{{i.author_name}}</strong>
+        <p style="color:white;">{{i.question_category}}</p>
+        <em style="color:white;">{{i.pub_date}}</em>
+    </a>
+{% endfor %}
+
+{% endblock %}

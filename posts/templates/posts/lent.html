@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Лента Writext{% endblock %}
+
+{% block headcontent %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link rel='icon' href="{% static 'pages/imgs/writext.png' %}" type='image/png'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block bodycontent %}
+
+{% if request.user.username == forum.author %}
+    <h3><a href="{% url 'posts:del_post' post.id %}">Удалить пост</a></h3>
+{% endif %}
+
+<h2>{{post.post_title}}</h2>
+<strong>{{post.author_name}}</strong>
+<p>{{post.post_text}}</p>
+<em>{{post.post_category}}</em>
+<strong><em>{{post.pub_date}}</em></strong>
+
+{% if comment %}
+{% for c in comment %}
+
+{% if request.user.username == c.author %}
+    <h3><a href="{% url 'posts:del_comment' post.id c.id %}">Удалить коментарий</a></h3>
+{% endif %}
+
+<h4>{{c.author_name}}</h4>
+<p>{{c.comment_text}}</p>
+<em>{{c.pub_date}}</em>
+{% endfor %}
+{% else %}
+<h4>Пока здесь ничего нет, стань первым!</h4>
+{% endif %}
+
+<form action="{% url 'posts:create_comment' post.id %}" method="post">
+    {% csrf_token %}
+    <textarea required="" placeholder="Текст комментария" cols="30" rows="10" name="text"></textarea><br>
+    <button type="submit">Оставить коментарий</button>
+</form>
+{% endblock %}

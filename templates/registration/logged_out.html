@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Добро пожаловать на Writext!{% endblock %}
+
+{% block headcontent %}
+{% endblock %}
+
+{% block bodycontent %}
+
+<p>Logged out!</p>
+
+<a href="{% url 'login'%}">Click here to login again.</a>
+
+{% endblock %}

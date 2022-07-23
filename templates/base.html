@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta char='utf-8'>
+		<title>{% block title %}EnDi{% endblock %}</title>
+		<link rel='icon' href="{% static 'pages/imgs/writextbiginverted.png' %}" type='image/png'>
+		{% block headcontent %}
+		{% endblock %}
+	</head>
+	<body>
+		{% block bodycontent %}{% endblock %}
+	</body>
+</html>

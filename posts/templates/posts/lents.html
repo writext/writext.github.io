@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Лента Writext{% endblock %}
+
+{% block headcontent %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link rel='icon' href="{% static 'pages/imgs/writextbiginverted.png' %}" type='image/png'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block bodycontent %}
+
+    <a href="{% url 'posts:create_post_page' %}">Создай пост!</a>
+    {% for i in posts %}
+            {% if request.user.username == i.author %}
+                <h3><a href="{% url 'posts:del_post' i.id %}">Удалить пост</a></h3>
+            {% endif %}
+        <a href="{% url 'posts:show_detail' i.id %}">
+            <h2>{{i.post_title}}</h2>
+            <strong>{{i.author_name}}</strong>
+            <p>{{i.post_category}}</p>
+            <em>{{i.pub_date}}</em>
+        </a>
+
+    {% endfor %}
+{% endblock %}

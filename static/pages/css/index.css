@@ -1,0 +1,115 @@
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #3196af;
+  font-family: Rubik;
+}
+
+.basic {
+  text-indent: 10px;
+  font-family: Rubik;
+  font-size: 24px;
+}
+
+@font-face {
+    font-family: Gilroy-Semibold;
+    src: url(../fonts/Gilroy-Semibold.ttf);
+}
+
+   h1 {
+    font-family: Gilroy-Semibold, 'Tahoma';
+    font-size: 24px;
+   } /*Добавил шрифт Gilroy Semibold*/
+  gilroybig {
+    font-family: Gilroy-Semibold, 'Tahoma';
+    font-size: 32px;
+   } /*То же, но больше размер*/
+  gilroynotverybig {
+    font-family: Gilroy-Semibold, 'Tahoma';
+    font-size: 36px;
+   } /*Ещё больше размер*/
+  gilroyverybig {
+    font-family: Gilroy-Semibold, 'Tahoma';
+    font-size: 44px;
+   } /*Намного больше размер*/
+
+  gilroyVERYVERYVERYbig {
+    font-family: Gilroy-Semibold, 'Tahoma';
+    font-size: 80px;
+  } /*Очень большой размер*/
+
+div {
+        background: #000D36;
+        color: white;
+        padding: 10px;
+        border-radius: 20px 0 20px 0; /*Пытаюсь сделать загруглённый левый верхний уголок*/
+}
+
+ a{
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  background-color: #000A26;
+  font-family: Gilroy-Semibold, 'Tahoma';
+  text-decoration: none;
+}
+
+.header {
+  font-family: Gilroy-Semibold, 'Tahoma';
+  font-size: 24px;
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-item {
+  margin-right: 82px;
+}
+
+.header-item:last-child {
+  text-align: right;
+  margin-left: 200px;
+}
+
+li {
+  list-style-type: none;
+  /* Убираем маркеры */
+}
+
+.logo {
+  background: #000A26;
+}
+
+.i {
+   font-style: italic;
+}
+/* Необходимо для анимации */
+.eeh {
+  visibility: hidden;
+}
+
+#hi {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  font-size: 72px;
+  color: white;
+}
+/* Конец необходимого для анимации */
+
+.tab { margin-left: 40px; }
+.untab { margin-right: 40px; }
+.toptab { margin-top: 15px; }
+.logotab { margin-left: 40px; margin-bottom: 15px; } /*Не трогать, это для отступа логотипа на главной!*/
+
+.ugolki {border-radius: 20px; } /*Это для пикч*/
+.ugolki2 {border-radius: 20px; margin-top: 15px; align: left} /*Это тоже для пикч*/

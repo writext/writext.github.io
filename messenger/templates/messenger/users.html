@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Добро пожаловать на Writext!{% endblock %}
+
+{% block headcontent %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
+{% block bodycontent %}
+    {% for user in users %}
+<a href="{% url 'messenger:user_detail' user.id %}"><h1>{{user.first_name}}</h1></a>
+    {% endfor %}
+{% endblock %}

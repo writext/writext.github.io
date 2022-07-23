@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Форум Writext{% endblock %}
+
+{% block headcontent %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link rel='icon' href="{% static 'pages/imgs/writext.png' %}" type='image/png'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block bodycontent %}
+
+{% if request.user.username == forum.author %}
+    <h3><a href="{% url 'forums:del_question' forum.id %}">Удалить вопрос</a></h3>
+{% endif %}
+
+<h2>{{forum.question_title}}</h2>
+<strong>{{forum.author_name}}</strong>
+<p>{{forum.question_text}}</p>
+<em>{{forum.question_category}}</em>
+<strong><em>{{forum.pub_date}}</em></strong>
+
+{% if comment %}
+{% for c in comment %}
+
+{% if request.user.username == c.author %}
+    <h3><a href="{% url 'forums:del_answer' forum.id c.id %}">Удалить ответ</a></h3>
+{% endif %}
+
+<h4>{{c.author_name}}</h4>
+<p>{{c.comment_text}}</p>
+<em>{{c.pub_date}}</em>
+{% endfor %}
+{% else %}
+<h4>Пока здесь ничего нет, стань первым!</h4>
+{% endif %}
+
+<form action="{% url 'forums:create_answer' forum.id %}" method="post">
+    {% csrf_token %}
+    <textarea required="" placeholder="Текст ответа" cols="30" rows="10" name="text"></textarea><br>
+    <button type="submit">Ответить</button>
+</form>
+{% endblock %}
