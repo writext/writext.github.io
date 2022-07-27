@@ -13,7 +13,9 @@
 {% block bodycontent %}
 
     <a href="{% url 'posts:create_post_page' %}">Создай пост!</a>
+    <div class="post_holder">
     {% for i in posts %}
+        <span class="post">
             {% if request.user.username == i.author %}
                 <h3><a href="{% url 'posts:del_post' i.id %}">Удалить пост</a></h3>
             {% endif %}
@@ -23,6 +25,7 @@
             <p>{{i.post_category}}</p>
             <em>{{i.pub_date}}</em>
         </a>
-
+        </span>
     {% endfor %}
+    </div>
 {% endblock %}
